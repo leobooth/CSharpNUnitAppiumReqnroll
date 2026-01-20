@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Appium.WebDriver" Version="8.0.1" />
+    <PackageReference Include="coverlet.collector" Version="6.0.4" />
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.0" />
+    <PackageReference Include="NUnit" Version="4.3.2" />
+    <PackageReference Include="NUnit.Analyzers" Version="4.7.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="5.0.0" />
+    <PackageReference Include="Reqnroll" Version="3.3.2" />
+    <PackageReference Include="Reqnroll.NUnit" Version="3.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="NUnit.Framework" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="**/*.feature"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ReqnrollFeatureFile Update="TestSuite\SauceLabs\Features\Login.feature">
+      <NormalizedLogicalName>TestSuite/SauceLabs/Features/SauceLabs/Login.feature</NormalizedLogicalName>
+      <NormalizedRelativeDir>TestSuite\SauceLabs\Features\SauceLabs\</NormalizedRelativeDir>
+      <CodeBehindFile>TestSuite\SauceLabs\Features\SauceLabs\Login.feature.cs</CodeBehindFile>
+      <MessagesFile>obj\Debug\net10.0\TestSuite\SauceLabs\Features\SauceLabs\Login.feature.ndjson</MessagesFile>
+      <MessagesResourceName>TestSuite/SauceLabs/Features/SauceLabs/Login.feature.ndjson</MessagesResourceName>
+      <FeatureFileResourceName>TestSuite/SauceLabs/Features/SauceLabs/Login.feature</FeatureFileResourceName>
+    </ReqnrollFeatureFile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="TestSuite\3_PageObjects\.gitkeep" />
+    <None Remove="TestSuite\4_SampleApps\android.wdio.native.app.v2.0.0.apk" />
+  </ItemGroup>
+
+</Project>

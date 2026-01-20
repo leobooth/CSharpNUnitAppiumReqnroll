@@ -1,0 +1,39 @@
+﻿# =========================
+# Reqnroll
+# =========================
+**/*.feature.cs
+
+# =========================
+# JetBrains IDE 
+# ========================= 
+.idea/
+obj/
+bin/
+Folder.DotSettings.user
+
+# =========================
+# Visual Studio / VSCode
+# =========================
+.vscode/
+*.suo
+*.sln
+
+# =========================
+# operating system
+# =========================
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# OS generated files #
+Icon?
+
+# Mac desktop service store files
+.DS_Store
