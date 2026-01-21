@@ -18,11 +18,19 @@ public class SidebarMenuSteps
         _driver = (AppiumDriver)_scenarioContext["driver"];
     }
 
+    [StepDefinition("I click the About button")]
+    public void ClickAboutButton()
+    {
+        SidebarMenu sidebarMenu = new SidebarMenu(_driver);
+        WaitUntil.ElementVisible(_driver, sidebarMenu.AboutButton);
+        sidebarMenu.ClickAboutButton();
+    }
+    
     [StepDefinition("I click the Catalog button")]
     public void ClickCatalogButton()
     {
         SidebarMenu sidebarMenu = new SidebarMenu(_driver);
         WaitUntil.ElementVisible(_driver, sidebarMenu.CatalogButton);
-        _driver.FindElement(sidebarMenu.CatalogButton).Click();
+        sidebarMenu.ClickCatalogButton();
     }
 }

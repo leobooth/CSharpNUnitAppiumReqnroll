@@ -1,6 +1,7 @@
 ﻿using CSharpNUnitAppiumReqnroll.TestFramework.Framework.Waits;
 using CSharpNUnitAppiumReqnroll.TestSuite._3_Screens;
 using CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.Screens.SauceLabs.Common;
+using CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.Screens.SauceLabs.Components;
 using OpenQA.Selenium.Appium;
 using Reqnroll;
 
@@ -11,11 +12,16 @@ public class LoginSteps
 {
     private ScenarioContext _scenarioContext;
     private AppiumDriver _driver;
+
+    private ScreenHeader _screenHeader;
+    private SidebarMenu _sidebarMenu;
     
     public LoginSteps(ScenarioContext scenarioContext)
     {
         _scenarioContext = scenarioContext;
         _driver = (AppiumDriver)_scenarioContext["driver"];
+        _screenHeader = new ScreenHeader(_driver);
+        _sidebarMenu = new SidebarMenu(_driver);
     }
 
     [StepDefinition("the Login screen is visible")]
@@ -32,11 +38,11 @@ public class LoginSteps
         LoginScreen loginScreen = new LoginScreen(_driver);
         
         // TODO: extend Click() and other actions to wait for elements first
-        WaitUntil.ElementVisible(_driver, loginScreen.ScreenHeader.MenuButton);
-        loginScreen.ScreenHeader.ClickMenuButton();
+        WaitUntil.ElementVisible(_driver, _screenHeader.MenuButton);
+        _screenHeader.ClickMenuButton();
         
-        WaitUntil.ElementVisible(_driver, loginScreen.SidebarMenu.LogInButton);
-        loginScreen.SidebarMenu.ClickLogInButton();
+        WaitUntil.ElementVisible(_driver, _sidebarMenu.LogInButton);
+        _sidebarMenu.ClickLogInButton();
         
         WaitUntil.ElementVisible(_driver, loginScreen.UsernameTextbox);
         WaitUntil.ElementVisible(_driver, loginScreen.PasswordTextbox);
@@ -46,14 +52,13 @@ public class LoginSteps
     [StepDefinition("I log out")]
     public void Logout()
     {
-        LoginScreen loginScreen = new LoginScreen(_driver);
         LogoutAlert logoutAlert = new LogoutAlert(_driver);
 
-        WaitUntil.ElementVisible(_driver, loginScreen.ScreenHeader.MenuButton);
-        loginScreen.ScreenHeader.ClickMenuButton();
+        WaitUntil.ElementVisible(_driver, _screenHeader.MenuButton);
+        _screenHeader.ClickMenuButton();
         
-        WaitUntil.ElementVisible(_driver, loginScreen.SidebarMenu.LogOutButton);
-        loginScreen.SidebarMenu.ClickLogOutButton();
+        WaitUntil.ElementVisible(_driver, _sidebarMenu.LogOutButton);
+        _sidebarMenu.ClickLogOutButton();
         
         WaitUntil.ElementVisible(_driver, logoutAlert.LogoutButton);
         logoutAlert.ClickLogoutButton();

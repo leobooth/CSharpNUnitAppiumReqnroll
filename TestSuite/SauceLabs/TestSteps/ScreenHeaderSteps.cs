@@ -17,7 +17,7 @@ public class ScreenHeaderSteps
         _driver = (AppiumDriver)_scenarioContext["driver"];
     }
 
-    [StepDefinition("I click the Menu button")]
+    [StepDefinition("I open the sidebar menu")]
     public void ClickMenuButton()
     {
         ScreenHeader screenHeader = new ScreenHeader(_driver);

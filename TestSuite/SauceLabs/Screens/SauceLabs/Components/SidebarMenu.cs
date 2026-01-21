@@ -16,6 +16,8 @@ public class SidebarMenu : BaseScreen
     // Menu buttons
     public By CatalogButton =
         By.XPath("//android.widget.TextView[@resource-id='com.saucelabs.mydemoapp.android:id/itemTV' and @text='Catalog']");
+    public By AboutButton =
+        By.XPath("//android.widget.TextView[@resource-id='com.saucelabs.mydemoapp.android:id/itemTV' and @text='About']");
     public By LogInButton =
         By.XPath("//android.widget.TextView[@resource-id='com.saucelabs.mydemoapp.android:id/itemTV'][@text='Log In']");
     public By LogOutButton =
@@ -25,6 +27,12 @@ public class SidebarMenu : BaseScreen
     {
         Driver.FindElement(CatalogButton).Click();
     }
+
+    public void ClickAboutButton()
+    {
+        Driver.FindElement(AboutButton).Click();
+    }
+    
     public void ClickLogInButton()
     {
         Driver.FindElement(LogInButton).Click();

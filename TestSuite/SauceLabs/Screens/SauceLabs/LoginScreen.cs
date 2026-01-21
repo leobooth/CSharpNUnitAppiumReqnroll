@@ -7,14 +7,9 @@ namespace CSharpNUnitAppiumReqnroll.TestSuite._3_Screens;
 
 public class LoginScreen : BaseScreen
 {
-    public ScreenHeader ScreenHeader;
-    public SidebarMenu SidebarMenu;
-    
     public LoginScreen(AppiumDriver driver)
     {
         this.Driver = driver;
-        this.ScreenHeader = new ScreenHeader(Driver);
-        this.SidebarMenu = new SidebarMenu(Driver);
     }
     
     public By ScreenContainer = MobileBy.Id("com.saucelabs.mydemoapp.android:id/fragment_container");
