@@ -1,4 +1,8 @@
-﻿Where to get sample apps:
+﻿To start Appium server:
+
+appium --relaxed-security --use-plugins all --port 4723
+
+Where to get sample apps:
 
 Sauce Labs:
 https://github.com/saucelabs/my-demo-app-android
