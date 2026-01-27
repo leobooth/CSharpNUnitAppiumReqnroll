@@ -17,3 +17,6 @@
 */
 
 [assembly: Parallelizable(ParallelScope.Fixtures)]
+
+// Controls max parallel threads (read from .env)
+[assembly: LevelOfParallelism(2)]
