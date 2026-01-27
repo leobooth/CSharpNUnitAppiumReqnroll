@@ -30,13 +30,14 @@ public class TestSuiteHooks
     [BeforeScenario]
     public void BeforeScenario()
     {
-        DriverHelper.StoreDriverInScenarioContext(_scenarioContext);
+        var driver = DriverFactory.CreateDriver("ANDROID");
+        DriverFactory.StoreDriverInScenarioContext(_scenarioContext, driver);
     }
 
     [AfterScenario]
     public void AfterScenario()
     {
         AppiumDriver driver = (AppiumDriver)_scenarioContext["driver"];
-        driver.Quit();
+        driver?.Quit();
     }
 }
