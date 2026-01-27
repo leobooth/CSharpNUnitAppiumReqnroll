@@ -3,7 +3,7 @@ using OpenQA.Selenium.Appium;
 
 namespace CSharpNUnitAppiumReqnroll.TestFramework.Framework;
 
-public static class ExtensionMethods
+public static class DriverExtensions
 {
     public static bool IsVisible(this AppiumDriver driver, By byLocator)
     {
