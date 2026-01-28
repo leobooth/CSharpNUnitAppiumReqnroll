@@ -1,0 +1,18 @@
+﻿{
+  "AppiumDevices": {
+    "Devices": [
+      {
+        "AutomationName": "UiAutomator2",
+        "DeviceName": "Pixel_5_API_33",
+        "PlatformVersion": "13.0",
+        "Udid": "emulator-5554"
+      },
+      {
+        "AutomationName": "UiAutomator2",
+        "DeviceName": "Samsung_Galaxy_S22",
+        "PlatformVersion": "12.0",
+        "Udid": "adb-device-id-123"
+      }
+    ]
+  }
+}
