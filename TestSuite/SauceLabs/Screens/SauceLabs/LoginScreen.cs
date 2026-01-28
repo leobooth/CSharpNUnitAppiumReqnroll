@@ -22,6 +22,8 @@ public class LoginScreen : BaseScreen
 
     public By PasswordTextbox = MobileBy.Id("com.saucelabs.mydemoapp.android:id/passwordET");
 
+    public By PasswordErrorMessage = MobileBy.Id("com.saucelabs.mydemoapp.android:id/passwordErrorTV");
+    
     public By LoginButton = MobileBy.Id("com.saucelabs.mydemoapp.android:id/loginBtn");
 
     public void Login(string username, string password)
