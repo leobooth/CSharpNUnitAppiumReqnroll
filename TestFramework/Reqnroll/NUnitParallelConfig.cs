@@ -16,7 +16,7 @@
     [assembly: Parallelizable(ParallelScope.Children)]
 */
 
-[assembly: Parallelizable(ParallelScope.Fixtures)]
+[assembly: Parallelizable(ParallelScope.Fixtures)] // Runs Feature files in parallel
 
-// Controls max parallel threads (read from .env)
-[assembly: LevelOfParallelism(2)]
+// TODO: get number of threads from .env
+[assembly: LevelOfParallelism(4)] // Maximum number of concurrent threads

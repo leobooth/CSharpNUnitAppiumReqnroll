@@ -1,0 +1,17 @@
+﻿# node2.toml
+[server]
+port = 5565
+
+[node]
+detect-drivers = false
+
+[events]
+publish = "tcp://HUB_IP_ADDRESS:4442"
+subscribe = "tcp://HUB_IP_ADDRESS:4443"
+
+[relay]
+url = "http://localhost:4733"
+status-endpoint = "/status"
+configs = [
+    "1", "{\"platformName\": \"iOS\", \"appium:automationName\": \"XCUITest\"}"
+]
