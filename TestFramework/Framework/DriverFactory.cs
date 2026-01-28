@@ -7,8 +7,6 @@ using OpenQA.Selenium;
 
 namespace CSharpNUnitAppiumReqnroll.TestFramework.Framework;
 
-
-
 public class DriverFactory
 {
     private static string _seleniumGridHubUrl = Env.GetString("SELENIUM_GRID_HUB_URL");
