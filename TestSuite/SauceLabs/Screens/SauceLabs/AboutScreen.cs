@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 
-namespace CSharpNUnitAppiumReqnroll.TestSuite._3_Screens;
+namespace CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.Screens.SauceLabs;
 
 public class AboutScreen : BaseScreen
 {
@@ -13,24 +13,24 @@ public class AboutScreen : BaseScreen
         _driver = driver;
     }
 
-    public By Title = MobileBy.Id("com.saucelabs.mydemoapp.android:id/aboutTV");
-    public By Logo1 = MobileBy.Id("com.saucelabs.mydemoapp.android:id/titleIV");
-    public By AppVersionNumber = MobileBy.Id("com.saucelabs.mydemoapp.android:id/versionTV");
-    public By Logo2 = MobileBy.Id("com.saucelabs.mydemoapp.android:id/teamIV");
-    public By SauceLabsWebsiteLink = MobileBy.Id("com.saucelabs.mydemoapp.android:id/webTV");
+    public string Title = "com.saucelabs.mydemoapp.android:id/aboutTV";
+    public string Logo1 = "com.saucelabs.mydemoapp.android:id/titleIV";
+    public string AppVersionNumber = "com.saucelabs.mydemoapp.android:id/versionTV";
+    public string Logo2 = "com.saucelabs.mydemoapp.android:id/teamIV";
+    public string SauceLabsWebsiteLink = "com.saucelabs.mydemoapp.android:id/webTV";
 
     public bool IsVisible()
     {
-        return _driver.IsVisible(Title);
+        return _driver.IsVisible(MobileBy.Id(Title));
     }
 
     public string GetAppVersionNumber()
     {
-        return _driver.FindElement(AppVersionNumber).Text;
+        return _driver.FindElement(MobileBy.Id(AppVersionNumber)).Text;
     }
 
     public void ClickSauceLabsWebsiteLink()
     {
-        _driver.FindElement(SauceLabsWebsiteLink).Click();
+        _driver.FindElement(MobileBy.Id(SauceLabsWebsiteLink)).Click();
     }
 }

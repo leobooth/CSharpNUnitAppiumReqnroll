@@ -11,22 +11,22 @@ public class ScreenHeader : BaseScreen
         this.Driver = driver;
     }
     
-    public By ScreenContainer = MobileBy.Id("com.saucelabs.mydemoapp.android:id/header");
+    public string ScreenContainer = "com.saucelabs.mydemoapp.android:id/header";
     
-    public By AppLogo = MobileBy.Id("com.saucelabs.mydemoapp.android):id/mTvTitle");
+    public string AppLogo = "com.saucelabs.mydemoapp.android:id/mTvTitle";
 
-    public By MenuButton = MobileBy.Id("com.saucelabs.mydemoapp.android:id/menuIV");
+    public string MenuButton = "com.saucelabs.mydemoapp.android:id/menuIV";
     
-    public By CartButton = MobileBy.Id("com.saucelabs.mydemoapp.android:id/cartIV");
+    public string CartButton = "com.saucelabs.mydemoapp.android:id/cartIV";
 
     public void ClickMenuButton()
     {
-        Driver.FindElement(MenuButton).Click();
+        Driver.FindElement(MobileBy.Id(MenuButton)).Click();
     }
 
     public void ClickCartButton()
     {
-        Driver.FindElement(CartButton).Click();
+        Driver.FindElement(MobileBy.Id(CartButton)).Click();
     }
     
 }

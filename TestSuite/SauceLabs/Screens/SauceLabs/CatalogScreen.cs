@@ -3,7 +3,7 @@ using CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.Screens.SauceLabs.Components
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 
-namespace CSharpNUnitAppiumReqnroll.TestSuite._3_Screens;
+namespace CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.Screens.SauceLabs;
 
 public class CatalogScreen : BaseScreen
 {
@@ -17,17 +17,17 @@ public class CatalogScreen : BaseScreen
         this.SidebarMenu = new SidebarMenu(Driver);
     }
     
-    public By ScreenContainer = MobileBy.Id("com.saucelabs.mydemoapp.android:id/fragment_container");
+    public string ScreenContainer = "com.saucelabs.mydemoapp.android:id/fragment_container";
     
-    public By Title = MobileBy.Id("com.saucelabs.mydemoapp.android:id/productTV");
+    public string Title = "com.saucelabs.mydemoapp.android:id/productTV";
 
     // Products display
-    public By ProductContainer = MobileBy.Id("com.saucelabs.mydemoapp.android:id/scrollView");
+    public string ProductContainer = "com.saucelabs.mydemoapp.android:id/scrollView";
 
     public bool IsVisible()
     {
-        bool isTitleVisible = Driver.IsVisible(Title);
-        bool isProductContainerVisible = Driver.IsVisible(ProductContainer);
+        bool isTitleVisible = Driver.IsVisible(MobileBy.Id(Title));
+        bool isProductContainerVisible = Driver.IsVisible(MobileBy.Id(ProductContainer));
         return isTitleVisible && isProductContainerVisible;
     }
 }

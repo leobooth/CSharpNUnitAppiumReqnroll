@@ -3,7 +3,7 @@ using CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.Screens.SauceLabs.Components
 using OpenQA.Selenium.Appium;
 using Reqnroll;
 
-namespace CSharpNUnitAppiumReqnroll.TestSuite._2_TestSteps.SauceLabs;
+namespace CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.TestSteps;
 
 [Binding]
 public class ScreenHeaderSteps
@@ -21,7 +21,7 @@ public class ScreenHeaderSteps
     public void ClickMenuButton()
     {
         ScreenHeader screenHeader = new ScreenHeader(_driver);
-        WaitUntil.ElementVisible(_driver, screenHeader.MenuButton);
+        WaitUntil.ElementVisible(_driver, MobileBy.Id(screenHeader.MenuButton));
         screenHeader.ClickMenuButton();
     }
 }

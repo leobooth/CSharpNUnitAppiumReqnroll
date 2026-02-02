@@ -1,9 +1,9 @@
 ﻿using CSharpNUnitAppiumReqnroll.TestFramework.Framework.Waits;
-using CSharpNUnitAppiumReqnroll.TestSuite._3_Screens;
+using CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.Screens.SauceLabs;
 using OpenQA.Selenium.Appium;
 using Reqnroll;
 
-namespace CSharpNUnitAppiumReqnroll.TestSuite._2_TestSteps.SauceLabs;
+namespace CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.TestSteps;
 
 [Binding]
 public class AboutSteps

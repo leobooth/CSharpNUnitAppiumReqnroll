@@ -1,4 +1,5 @@
 ﻿using CSharpNUnitAppiumReqnroll.TestFramework.Framework;
+using DotNetEnv;
 using OpenQA.Selenium.Appium;
 using Reqnroll;
 
@@ -12,6 +13,8 @@ public class TestSuiteHooks
     public TestSuiteHooks(ScenarioContext scenarioContext)
     {
         _scenarioContext = scenarioContext;
+        string envFilePath = "C:\\Users\\leobo\\Documents\\GithubProjects\\CSharpNUnitAppiumReqnroll\\TestSuite\\.env";
+        DotNetEnv.Env.Load(envFilePath);
     }
     
     /*
@@ -30,14 +33,18 @@ public class TestSuiteHooks
     [BeforeScenario]
     public void BeforeScenario()
     {
-        var driver = DriverFactory.CreateDriver("ANDROID");
+        string serverUri = Env.GetString("APPIUM_SERVER_URI");
+        var driver = DriverFactory.CreateDriver(serverUri,"Emulator");
         DriverFactory.StoreDriverInScenarioContext(_scenarioContext, driver);
     }
 
     [AfterScenario]
     public void AfterScenario()
     {
-        AppiumDriver driver = (AppiumDriver)_scenarioContext["driver"];
-        driver?.Quit();
+        if (_scenarioContext.ContainsKey("driver"))
+        {
+            AppiumDriver driver = (AppiumDriver)_scenarioContext["driver"];
+            driver?.Quit();
+        }
     }
 }

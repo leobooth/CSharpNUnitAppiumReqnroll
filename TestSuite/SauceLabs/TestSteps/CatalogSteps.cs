@@ -1,11 +1,11 @@
 ﻿using CSharpNUnitAppiumReqnroll.TestFramework.Framework;
 using CSharpNUnitAppiumReqnroll.TestFramework.Framework.Waits;
-using CSharpNUnitAppiumReqnroll.TestSuite._3_Screens;
+using CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.Screens.SauceLabs;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
-using OpenQA.Selenium.Support.UI;
 using Reqnroll;
 
-namespace CSharpNUnitAppiumReqnroll.TestSuite._2_TestSteps.SauceLabs;
+namespace CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.TestSteps;
 
 [Binding]
 public class CatalogSteps : BaseScreen
@@ -23,7 +23,7 @@ public class CatalogSteps : BaseScreen
     public void CatalogScreenIsVisible()
     {
         CatalogScreen catalogScreen = new CatalogScreen(_driver);
-        WaitUntil.ElementVisible(_driver, catalogScreen.ScreenContainer);
+        WaitUntil.ElementVisible(_driver, MobileBy.Id(catalogScreen.ScreenContainer));
         Assert.That(catalogScreen.IsVisible(), "The Sauce Labs catalog screen is not visible");
     }
 }

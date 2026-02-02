@@ -3,7 +3,7 @@ using CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.Screens.SauceLabs.Components
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 
-namespace CSharpNUnitAppiumReqnroll.TestSuite._3_Screens;
+namespace CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.Screens.SauceLabs;
 
 public class LoginScreen : BaseScreen
 {
@@ -12,31 +12,31 @@ public class LoginScreen : BaseScreen
         this.Driver = driver;
     }
     
-    public By ScreenContainer = MobileBy.Id("com.saucelabs.mydemoapp.android:id/fragment_container");
+    public string ScreenContainer = "com.saucelabs.mydemoapp.android:id/fragment_container";
 
-    public By Title = MobileBy.Id("com.saucelabs.mydemoapp.android:id/loginTV");
+    public string Title = "com.saucelabs.mydemoapp.android:id/loginTV";
 
-    public By LoginInstructions = MobileBy.Id("com.saucelabs.mydemoapp.android:id/selectTextTV");
+    public string LoginInstructions = "com.saucelabs.mydemoapp.android:id/selectTextTV";
 
-    public By UsernameTextbox = MobileBy.Id("com.saucelabs.mydemoapp.android:id/nameET");
+    public string UsernameTextbox = "com.saucelabs.mydemoapp.android:id/nameET";
 
-    public By PasswordTextbox = MobileBy.Id("com.saucelabs.mydemoapp.android:id/passwordET");
+    public string PasswordTextbox = "com.saucelabs.mydemoapp.android:id/passwordET";
 
-    public By PasswordErrorMessage = MobileBy.Id("com.saucelabs.mydemoapp.android:id/passwordErrorTV");
+    public string PasswordErrorMessage = "com.saucelabs.mydemoapp.android:id/passwordErrorTV";
     
-    public By LoginButton = MobileBy.Id("com.saucelabs.mydemoapp.android:id/loginBtn");
+    public string LoginButton = "com.saucelabs.mydemoapp.android:id/loginBtn";
 
     public void Login(string username, string password)
     {
-        Driver.FindElement(UsernameTextbox).SendKeys(username);
-        Driver.FindElement(PasswordTextbox).SendKeys(password);
-        Driver.FindElement(LoginButton).Click();
+        Driver.FindElement(MobileBy.Id(UsernameTextbox)).SendKeys(username);
+        Driver.FindElement(MobileBy.Id(PasswordTextbox)).SendKeys(password);
+        Driver.FindElement(MobileBy.Id(LoginButton)).Click();
     }
 
     public bool IsVisible()
     {
-        bool isTitleVisible = Driver.IsVisible(Title);
-        bool isLoginButtonVisible = Driver.IsVisible(LoginInstructions);
+        bool isTitleVisible = Driver.IsVisible(MobileBy.Id(Title));
+        bool isLoginButtonVisible = Driver.IsVisible(MobileBy.Id(LoginInstructions));
         return isTitleVisible && isLoginButtonVisible;
     }
 }

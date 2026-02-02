@@ -1,11 +1,12 @@
 ﻿using CSharpNUnitAppiumReqnroll.TestFramework.Framework.Waits;
-using CSharpNUnitAppiumReqnroll.TestSuite._3_Screens;
+using CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.Screens.SauceLabs;
 using CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.Screens.SauceLabs.Common;
 using CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.Screens.SauceLabs.Components;
 using OpenQA.Selenium.Appium;
 using Reqnroll;
+using NUnit.Framework;
 
-namespace CSharpNUnitAppiumReqnroll.TestSuite._2_TestSteps.SauceLabs;
+namespace CSharpNUnitAppiumReqnroll.TestSuite.SauceLabs.TestSteps;
 
 [Binding]
 public class LoginSteps
@@ -17,7 +18,7 @@ public class LoginSteps
     private SidebarMenu _sidebarMenu;
     private LoginScreen _loginScreen;
     private LogoutAlert _logoutAlert;
-    
+
     public LoginSteps(ScenarioContext scenarioContext)
     {
         _scenarioContext = scenarioContext;
@@ -39,27 +40,27 @@ public class LoginSteps
     public void LogInAsUser(string username, string password)
     {
         // TODO: extend Click() and other actions to wait for elements first
-        WaitUntil.ElementVisible(_driver, _screenHeader.MenuButton);
+        WaitUntil.ElementVisible(_driver, MobileBy.Id(_screenHeader.MenuButton));
         _screenHeader.ClickMenuButton();
         
         WaitUntil.ElementVisible(_driver, _sidebarMenu.LogInButton);
         _sidebarMenu.ClickLogInButton();
         
-        WaitUntil.ElementVisible(_driver, _loginScreen.UsernameTextbox);
-        WaitUntil.ElementVisible(_driver, _loginScreen.PasswordTextbox);
+        WaitUntil.ElementVisible(_driver, MobileBy.Id(_loginScreen.UsernameTextbox));
+        WaitUntil.ElementVisible(_driver, MobileBy.Id(_loginScreen.PasswordTextbox));
         _loginScreen.Login(username, password);
     }
 
     [StepDefinition("the Locked Out message is visible")]
     public void LockedOutMessageIsVisible()
     {
-        WaitUntil.ElementVisible(_driver, _loginScreen.PasswordErrorMessage);
+        WaitUntil.ElementVisible(_driver, MobileBy.Id(_loginScreen.PasswordErrorMessage));
     }
     
     [StepDefinition("I log out")]
     public void Logout()
     {
-        WaitUntil.ElementVisible(_driver, _screenHeader.MenuButton);
+        WaitUntil.ElementVisible(_driver, MobileBy.Id(_screenHeader.MenuButton));
         _screenHeader.ClickMenuButton();
         
         WaitUntil.ElementVisible(_driver, _sidebarMenu.LogOutButton);
