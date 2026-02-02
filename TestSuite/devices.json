@@ -1,18 +1,21 @@
 ﻿{
-  "AppiumDevices": {
-    "Devices": [
-      {
-        "AutomationName": "UiAutomator2",
-        "DeviceName": "Pixel_5_API_33",
-        "PlatformVersion": "13.0",
-        "Udid": "emulator-5554"
-      },
-      {
-        "AutomationName": "UiAutomator2",
-        "DeviceName": "Samsung_Galaxy_S22",
-        "PlatformVersion": "12.0",
-        "Udid": "adb-device-id-123"
-      }
-    ]
+  "Devices": {
+    "Emulator": {
+      "platformName": "Android",
+      "automationName": "UiAutomator2",
+      "deviceName": "API_36_1",
+      "appium_appPackage": "com.saucelabs.mydemoapp.android",
+      "appium_udid": "emulator-5554",
+      "appium_eventTimings": true,
+      "appium_noReset": true
+    },
+    "Real_Device": {
+      "platformName": "Android",
+      "appium:deviceName": "Samsung_S22",
+      "appium:udid": "1234567890ABC",
+      "appium:automationName": "UiAutomator2",
+      "appium:noReset": true
+    }
   }
 }
+
