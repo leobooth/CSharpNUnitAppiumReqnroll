@@ -5,6 +5,20 @@ using Reqnroll;
 
 namespace CSharpNUnitAppiumReqnroll.TestSuite;
 
+/*
+    * [BeforeTestRun]
+    * [BeforeFeature]
+    * [BeforeScenario]
+    * [BeforeScenarioBlock]
+    * [BeforeStep]
+    * [AfterStep]
+    * [AfterScenarioBlock]
+    * [AfterScenario]
+    * [AfterFeature]
+    * [AfterTestRun]
+*/
+// https://docs.reqnroll.net/latest/automation/hooks.html#supported-hook-attributes
+
 [Binding]
 public class TestSuiteHooks
 {
@@ -16,19 +30,6 @@ public class TestSuiteHooks
         string envFilePath = "C:\\Users\\leobo\\Documents\\GithubProjects\\CSharpNUnitAppiumReqnroll\\TestSuite\\.env";
         DotNetEnv.Env.Load(envFilePath);
     }
-    
-    /*
-     * [BeforeTestRun]
-     * [BeforeFeature]
-     * [BeforeScenario]
-     * [BeforeScenarioBlock]
-     * [BeforeStep]
-     * [AfterStep]
-     * [AfterScenarioBlock]
-     * [AfterScenario]
-     * [AfterFeature]
-     * [AfterTestRun]
-     */
     
     [BeforeScenario]
     public void BeforeScenario()
