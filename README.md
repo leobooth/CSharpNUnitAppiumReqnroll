@@ -2,6 +2,10 @@
 
 appium --relaxed-security --use-plugins all --port 4723
 
+To start the Java Selenium Grid:
+
+java -jar selenium-server-4.x.x.jar hub
+
 Where to get sample apps:
 
 Sauce Labs:

@@ -1,11 +1,20 @@
 ﻿{
   "Devices": {
-    "Emulator": {
+    "emulator-5554": {
       "platformName": "Android",
       "automationName": "UiAutomator2",
       "deviceName": "API_36_1",
       "appium_appPackage": "com.saucelabs.mydemoapp.android",
       "appium_udid": "emulator-5554",
+      "appium_eventTimings": true,
+      "appium_noReset": true
+    },
+        "emulator-5556": {
+      "platformName": "Android",
+      "automationName": "UiAutomator2",
+      "deviceName": "API_36_1",
+      "appium_appPackage": "com.saucelabs.mydemoapp.android",
+      "appium_udid": "emulator-5556",
       "appium_eventTimings": true,
       "appium_noReset": true
     },

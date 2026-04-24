@@ -1,4 +1,6 @@
 ﻿# node1.toml
+
+# Selenium Grid node port
 [server]
 port = 5555
 
