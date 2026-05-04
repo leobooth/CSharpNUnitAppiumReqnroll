@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium.Appium;
+﻿using System.Text.Json;
+using CSharpNUnitAppiumReqnroll.TestFramework.Framework.Models;
+using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using Reqnroll;
 using DotNetEnv;
@@ -53,7 +55,6 @@ public class DriverFactory
     
     public static AppiumDriver CreateDriver(string serverUri, string deviceName)
     {
-        
         AppiumOptions appiumOptions = CreateAppiumOptions(deviceName);
         AppiumDriver appiumDriver = CreateAppiumDriver(serverUri, appiumOptions);
         
