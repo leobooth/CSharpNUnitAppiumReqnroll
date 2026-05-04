@@ -21,11 +21,11 @@ namespace CSharpNUnitAppiumReqnroll.TestSuite;
 // https://docs.reqnroll.net/latest/automation/hooks.html#supported-hook-attributes
 
 [Binding]
-public class TestSuiteHooks
+public class TestFrameworkHooks
 {
     private ScenarioContext _scenarioContext;
     
-    public TestSuiteHooks(ScenarioContext scenarioContext)
+    public TestFrameworkHooks(ScenarioContext scenarioContext)
     {
         _scenarioContext = scenarioContext;
         
@@ -36,24 +36,21 @@ public class TestSuiteHooks
     [BeforeTestRun]
     public static void BeforeTestRun()
     {
-        
+        // Code to run before the entire test run starts
+        string devicesJsonFilepath = Env.GetString("DEVICES_JSON_PATH");
+        AppiumClientDevices devices = GetAppiumClientDevicesFromJson.GetAppiumClientDevicesFromDevicesJson(devicesJsonFilepath);
+        Console.WriteLine("breakpoint");
     }
     
     [BeforeScenario]
     public void BeforeScenario()
     {
-        string serverUri = Env.GetString("APPIUM_SERVER_URI");
-        var driver = DriverFactory.CreateDriver(serverUri,"Emulator");
-        DriverFactory.StoreDriverInScenarioContext(_scenarioContext, driver);
+
     }
 
     [AfterScenario]
     public void AfterScenario()
     {
-        if (_scenarioContext.ContainsKey("driver"))
-        {
-            AppiumDriver driver = (AppiumDriver)_scenarioContext["driver"];
-            driver?.Quit();
-        }
+        
     }
 }
