@@ -38,7 +38,7 @@ public class TestFrameworkHooks
     {
         // Code to run before the entire test run starts
         string devicesJsonFilepath = Env.GetString("DEVICES_JSON_PATH");
-        AppiumClientDevices devices = GetAppiumClientDevicesFromJson.GetAppiumClientDevicesFromDevicesJson(devicesJsonFilepath);
+        AppiumClientDevices devices = AppiumClientDevices.GetAppiumClientDevicesFromDevicesJson(devicesJsonFilepath);
         Console.WriteLine("breakpoint");
     }
     
